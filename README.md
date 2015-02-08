@@ -51,8 +51,8 @@ cabal run -- "(Show b) => (a->b) -> [a] -> [String]"
 
 Note that i use a git subtree for integration of exference-core into exference.
 (Maybe a submodule would be better, or just using a single repository -
-i have no definite opinion yet). Basically that means that changes
-made to the exference-core subtree should be separated from other changes.
+i have no definite opinion yet). 
 
 I am aware that few people know subtrees, and it does not really matter if
-you do not, so do not be discouraged.
+you do not, so do not be discouraged. Basically that means that changes
+made to the exference-core subtree should be separated from other changes.
