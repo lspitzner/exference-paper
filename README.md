@@ -54,5 +54,5 @@ Note that i use a git subtree for integration of exference-core into exference.
 i have no definite opinion yet). 
 
 I am aware that few people know subtrees, and it does not really matter if
-you do not, so do not be discouraged. Basically that means that changes
+you do not, so do not be discouraged. Basically it means that changes
 made to the exference-core subtree should be separated from other changes.
