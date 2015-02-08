@@ -14,14 +14,6 @@ does, but there are significant differences.
 There is [an introductory paper/report](https://github.com/lspitzner/exference/exference.pdf)
 which describes the exact features of the tool, and contrasts to existing projects.
 
-## Repositories
-
-Currently available are two cabal packages, living in their own repositories:
-- exference-exference-core: core functionality library
-- exference-exference: both library with advanced interface and executable
-
-Note that I have not published the irc bot package (yet).
-
 ## Known issues
 
 - The naming of the executable is misleading;
@@ -32,9 +24,18 @@ Note that I have not published the irc bot package (yet).
   this is possible and i have implemented something in this direction recently, but
   the performance is horrible without further optimizations.
 
+## Repositories
+
+Currently available are two cabal packages, living in their own repositories:
+- exference-exference-core: core functionality library
+- exference-exference: both library with advanced interface and executable
+
+Note that I have not published the irc bot package (yet).
+
 ## Compiling from source
 
-Compiling the executable involves something along the lines of
+Compiling the executable involves (after cloning the exference cabal package)
+something along the lines of
 
 ~~~~
 cabal sandbox init
@@ -46,3 +47,12 @@ cabal build
 cabal run -- "(Show b) => (a->b) -> [a] -> [String]"
 ~~~~
 
+## Contributing
+
+Note that i use a git subtree for integration of exference-core into exference.
+(Maybe a submodule would be better, or just using a single repository -
+i have no definite opinion yet). Basically that means that changes
+made to the exference-core subtree should be separated from other changes.
+
+I am aware that few people know subtrees, and it does not really matter if
+you do not, so do not be discouraged.
