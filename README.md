@@ -31,3 +31,18 @@ Note that I have not published the irc bot package (yet).
 - Pattern-matching on multi-constructor data-types is not supported - theoretically,
   this is possible and i have implemented something in this direction recently, but
   the performance is horrible without further optimizations.
+
+## Compiling from source
+
+Compiling the executable involves something along the lines of
+
+~~~~
+cabal sandbox init
+cabal sandbox add-source exference-core
+cabal install --deps
+cabal configure -fbuild-executable
+cabal build
+# and, for example
+cabal run -- "(Show b) => (a->b) -> [a] -> [String]"
+~~~~
+
