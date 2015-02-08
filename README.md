@@ -12,13 +12,22 @@ does, but there are significant differences.
 ## Documentation
 
 There is [an introductory paper/report](https://github.com/lspitzner/exference/exference.pdf)
-which describes the exact features of the tool.
+which describes the exact features of the tool, and contrasts to existing projects.
 
 ## Repositories
 
-The sources of the pdf and the cabal packages are kept in their own repositories:
-- exference-exference-doc: the paper markdown;
-- exference-exference-core and
-- exference-exference: cabal packages.
+Currently available are two cabal packages, living in their own repositories:
+- exference-exference-core: core functionality library
+- exference-exference: both library with advanced interface and executable
 
 Note that I have not published the irc bot package (yet).
+
+## Known issues
+
+- The naming of the executable is misleading;
+  the tests should be put in a proper test-suite.
+- Type synonyms are not supported yet.
+- Kinds are not checked (which can be seen as both advantage and disadvantage, see paper).
+- Pattern-matching on multi-constructor data-types is not supported - theoretically,
+  this is possible and i have implemented something in this direction recently, but
+  the performance is horrible without further optimizations.
