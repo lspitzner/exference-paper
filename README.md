@@ -68,3 +68,7 @@ In contrast to submodules it is not necessary to `update` or `init`.
 
 * The author did not learn about the term "entailment" until after implementing
   the respective part of the algorithm.
+
+## IRC
+
+`#exference`
