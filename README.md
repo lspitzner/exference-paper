@@ -18,6 +18,8 @@ which describes the exact features of the tool, and contrasts to existing projec
 
 - The naming of the executable is misleading;
   the tests should be put in a proper test-suite.
+  (initially the executable was created for testing purposes
+  , but now serves as command-line interface.)
 - Type synonyms are not supported yet.
 - Kinds are not checked (which can be seen as both advantage and disadvantage, see paper).
 - Pattern-matching on multi-constructor data-types is not supported - theoretically,
@@ -56,3 +58,4 @@ i have no definite opinion yet).
 I am aware that few people know subtrees, and it does not really matter if
 you do not, so do not be discouraged. Basically it means that changes
 made to the exference-core subtree should be separated from other changes.
+In contrast to submodules it is not necessary to `update` or `init`.
