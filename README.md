@@ -21,10 +21,14 @@ which describes the exact features of the tool, and contrasts to existing projec
   (initially the executable was created for testing purposes
   , but now serves as command-line interface.)
 - Type synonyms are not supported yet.
-- Kinds are not checked (which can be seen as both advantage and disadvantage, see paper).
+- Kinds are not checked (which can be seen as both advantage and disadvantage, see report).
 - Pattern-matching on multi-constructor data-types is not supported - theoretically,
   this is possible and i have implemented something in this direction recently, but
   the performance is horrible without further optimizations.
+
+Also, note that the version of exference mentioned in the report had some bugs
+that were fixed recently. No major changes were introduced, so the reader of the
+report probably can use the latest version.
 
 ## Repositories
 
@@ -59,3 +63,8 @@ I am aware that few people know subtrees, and it does not really matter if
 you do not, so do not be discouraged. Basically it means that changes
 made to the exference-core subtree should be separated from other changes.
 In contrast to submodules it is not necessary to `update` or `init`.
+
+## Trivia
+
+* The author did not learn about the term "entailment" until after implementing
+  the respective part of the algorithm.
