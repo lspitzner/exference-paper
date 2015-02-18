@@ -16,7 +16,7 @@ which describes the exact features of the tool, and contrasts to existing projec
 
 ## Known issues
 
-- The naming of the executable is misleading;
+- The executable is badly named (`test-main`);
   the tests should be put in a proper test-suite.
   (initially the executable was created for testing purposes
   , but now serves as command-line interface.)
@@ -72,3 +72,10 @@ In contrast to submodules it is not necessary to `update` or `init`.
 ## IRC
 
 `#exference`
+
+## FAQ
+
+- Why no hackage distribution?
+
+    Best excuse is that i keep making minor modifications, and want to wait
+    for a "proper" semi-finished version for a hackage publication.
