@@ -25,6 +25,7 @@ which describes the exact features of the tool, and contrasts to existing projec
 - Pattern-matching on multi-constructor data-types is not supported - theoretically,
   this is possible and i have implemented something in this direction recently, but
   the performance is horrible without further optimizations.
+- The dependency bounds of the cabal packages should be cleaned up/checked.
 
 Also, note that the version of exference mentioned in the report had some bugs
 that were fixed recently. No major changes were introduced, so the reader of the
