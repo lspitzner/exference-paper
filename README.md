@@ -17,6 +17,7 @@ which describes the exact features of the tool, and contrasts to existing projec
 I try to keep a bot running on irc (`#exference`) so you can play around
 with no need to install locally. But it is kinda old hardware.
 It reacts to `:exf` prefix, i.e. `:exf Monad m => m (m a) -> m a`.
+You can `/msg exferenceBot help` for usage.
 
 ## Known issues
 
