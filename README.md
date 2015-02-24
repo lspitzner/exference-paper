@@ -19,13 +19,15 @@ which describes the exact features of the tool, and contrasts to existing projec
 - The executable is badly named (`test-main`);
   the tests should be put in a proper test-suite.
   (initially the executable was created for testing purposes
-  , but now serves as command-line interface.)
+  , but now serves as command-line interface;
+  this is why no parameters run tests.)
 - Type synonyms are not supported yet.
 - Kinds are not checked (which can be seen as both advantage and disadvantage, see report).
 - Pattern-matching on multi-constructor data-types is not supported - theoretically,
   this is possible and i have implemented something in this direction recently, but
   the performance is horrible without further optimizations.
 - The dependency bounds of the cabal packages should be cleaned up/checked.
+  I postponed this as there is no automated way to do this. stupid tooling..)
 
 Also, note that the version of exference mentioned in the report had some bugs
 that were fixed recently. No major changes were introduced, so the reader of the
