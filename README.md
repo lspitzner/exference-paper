@@ -16,6 +16,8 @@ which describes the exact features of the tool, and contrasts to existing projec
 
 ## Known issues
 
+    (note that this is just an addition to the detailed feature description in the report)
+
 - The executable is badly named (`test-main`);
   the tests should be put in a proper test-suite.
   (initially the executable was created for testing purposes
