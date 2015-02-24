@@ -11,7 +11,7 @@ does, but there are significant differences.
 
 ## Documentation
 
-There is [an introductory paper/report](https://github.com/lspitzner/exference/exference.pdf)
+There is [an introductory paper/report](https://github.com/lspitzner/exference/raw/master/exference.pdf)
 which describes the exact features of the tool, and contrasts to existing projects.
 
 ## Known issues
