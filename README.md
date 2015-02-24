@@ -14,6 +14,10 @@ does, but there are significant differences.
 There is [an introductory paper/report](https://github.com/lspitzner/exference/raw/master/exference.pdf)
 which describes the exact features of the tool, and contrasts to existing projects.
 
+I try to keep a bot running on irc (`#exference`) so you can play around
+with no need to install locally. But it is kinda old hardware.
+It reacts to `:exf` prefix, i.e. `:exf Monad m => m (m a) -> m a`.
+
 ## Known issues
 
   (note that this is just an addition to the detailed feature description in the report)
