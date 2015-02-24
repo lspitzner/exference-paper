@@ -14,10 +14,15 @@ does, but there are significant differences.
 There is [an introductory paper/report](https://github.com/lspitzner/exference/raw/master/exference.pdf)
 which describes the exact features of the tool, and contrasts to existing projects.
 
+## exferenceBot
+
 I try to keep a bot running on irc (`#exference`) so you can play around
 with no need to install locally. But it is kinda old hardware.
 It reacts to `:exf` prefix, i.e. `:exf Monad m => m (m a) -> m a`.
 You can `/msg exferenceBot help` for usage.
+
+The bot uses [the dictionary (and ratings file) from exference-exference](https://github.com/lspitzner/exference-exference/blob/master/ExferenceDict.hs)
+ (from version 0.9.0.2, at the moment).
 
 ## Known issues
 
