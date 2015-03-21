@@ -9,10 +9,11 @@ Output: `\ b -> fmap (\ g -> show (b g))`
 This might seem similar to what [djinn](https://hackage.haskell.org/package/djinn)
 does, but there are significant differences.
 
-## Documentation
+## Documentation: [exference.pdf](https://github.com/lspitzner/exference/raw/master/exference.pdf)
 
-There is [an introductory paper/report](https://github.com/lspitzner/exference/raw/master/exference.pdf)
-which describes the exact features of the tool, and contrasts to existing projects.
+Describes the implementation, the relation to djinn,
+and the exact capabilities. I have not written a true user-guide,
+so you will have to survive with `--help`.
 
 ## exferenceBot
 
