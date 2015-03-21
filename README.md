@@ -13,12 +13,14 @@ does, but there are significant differences.
 
 Describes the implementation, the relation to djinn,
 and the exact capabilities. I have not written a true user-guide,
-so you will have to survive with `--help`.
+so you will have to survive with `--help` (for the cli)
+or `/msg exferenceBot help` (for the bot).
 
 ## exferenceBot
 
-I try to keep a bot running on irc (`#exference`) so you can play around
-with no need to install locally. But it is kinda old hardware.
+I try to keep a bot running on irc (`#exference`, and probably `#haskell`)
+so you can play around with no need to install locally.
+But it is kinda old hardware.
 It reacts to `:exf` prefix, i.e. `:exf Monad m => m (m a) -> m a`.
 You can `/msg exferenceBot help` for usage.
 
