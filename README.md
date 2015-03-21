@@ -49,8 +49,8 @@ report probably can use the latest version.
 ## Repositories
 
 Currently available are two cabal packages, living in their own repositories:
-- exference-exference-core: core functionality library
-- exference-exference: both library with advanced interface and executable
+- [exference-exference\-core](https://github.com/lspitzner/exference-exference-core): core functionality library
+- [exference-exference](https://github.com/lspitzner/exference-exference): both library with advanced interface and executable
 
 Note that I have not published the irc bot package (yet).
 
