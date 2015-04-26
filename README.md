@@ -6,55 +6,65 @@ Input: `(Show b) => (a -> b) -> [a] -> [String]`
 
 Output: `\ b -> fmap (\ g -> show (b g))`
 
-This might seem similar to what [djinn](https://hackage.haskell.org/package/djinn)
-does, but there are significant differences.
+[Djinn](https://hackage.haskell.org/package/djinn) is a well known tool that
+does something similar; the main difference is that *Exference* supports a
+larger subset of the haskell type system - most prominently type classes. This
+comes at a cost, however: *Exference* makes no promise regarding termination.
+Where *Djinn* tells you "there are no solutions", exference will keep trying,
+sometimes stopping with "i could not find any solutions".
 
-## Documentation: [exference.pdf](https://github.com/lspitzner/exference/raw/master/exference.pdf)
+# Links
 
-Describes the implementation, the relation to djinn,
-and the exact capabilities. I have not written a true user-guide,
-so you will have to survive with `--help` (for the cli)
-or `/msg exferenceBot help` (for the bot).
+- **Documentation: [exference.pdf](https://github.com/lspitzner/exference/raw/master/exference.pdf)** describes the implementation and properties;
+- Source repositories
+    - [exference-exference\-core](https://github.com/lspitzner/exference-exference-core): core functionality library
+    - [exference-exference](https://github.com/lspitzner/exference-exference): both library with advanced interface and executable
+- exferenceBot on freenode #exference
+    - play around without installing exference locally
+    - reacts to `:exf` prefix, i.e. `:exf "Monad m => m (m a) -> m a"`
+    - `/msg exferenceBot help`
+    - uses the environment (i.e. known functions+typeclasses) at https://github.com/lspitzner/exference-exference/tree/master/environment
 
-## exferenceBot
+# Usage notes
 
-I try to keep a bot running on irc (`#exference`, and probably `#haskell`)
-so you can play around with no need to install locally.
-But it is kinda old hardware.
-It reacts to `:exf` prefix, i.e. `:exf Monad m => m (m a) -> m a`.
-You can `/msg exferenceBot help` for usage.
+There are certain types of queries where *Exference* will not be able to find
+any / the right solution. Some common current limitations are:
 
-The bot uses [the dictionary (and ratings file) from exference-exference](https://github.com/lspitzner/exference-exference/blob/master/ExferenceDict.hs)
- (from version 0.9.0.2, at the moment).
+- By default, searches **only for solutions where all input is used up**, e.g.
+  `(a, b) -> a` will not find a solution (unless given `--allowunused` flag).
+  Often this is the desired behaviour, consider queries such as
+  `(a->b) -> [a] -> [b]` where a trivial solution would be `\_ _ -> []`.
+  This also means that certain functions are not included in the environment,
+  e.g. `length` or `mapM_`, as they "lose information";
+- Type synonyms are not supported, e.g. `String -> [Char]` will not give
+  solutions. Should be easy to implement, but I have not come around to it yet;
+- Kinds are not checked, e.g. `Maybe -> Either`
+  (which can be seen as both advantage and disadvantage, see report);
+- The environment is composed by hand currently, and does only include parts
+  of base plus a few other selected modules. Additions welcome!
+- Pattern-matching on multiple-constructor data-types is not supported;
+- See also the detailed feature description in the [exference.pdf](https://github.com/lspitzner/exference/raw/master/exference.pdf) report.
 
-## Known issues
+## Experimental features
 
-  (note that this is just an addition to the detailed feature description in the report)
+- Pattern-matching on multi-constructor data types can be enabled via
+  `-c --patternMatchMC`, but reduces performance significantly for any
+  non-trivial queries. Core algorithm needs re-write to optimize stuff
+  sufficiently I fear.
+- I recently added support for RankNTypes, but this is largely untested.
 
+## Other known (technical) issues
+
+- *Memory consumption is large* (even more so when profiling);
 - The executable is badly named (`test-main`);
   the tests should be put in a proper test-suite.
   (initially the executable was created for testing purposes
   , but now serves as command-line interface;
   this is why no parameters run tests.)
-- Type synonyms are not supported yet.
-- Kinds are not checked (which can be seen as both advantage and disadvantage, see report).
-- Pattern-matching on multi-constructor data-types is not supported - theoretically,
-  this is possible and i have implemented something in this direction recently, but
-  the performance is horrible without further optimizations.
 - The dependency bounds of the cabal packages should be cleaned up/checked.
   I postponed this as there is no automated way to do this. stupid tooling..)
-
-Also, note that the version of exference mentioned in the report had some bugs
-that were fixed recently. No major changes were introduced, so the reader of the
-report probably can use the latest version.
-
-## Repositories
-
-Currently available are two cabal packages, living in their own repositories:
-- [exference-exference\-core](https://github.com/lspitzner/exference-exference-core): core functionality library
-- [exference-exference](https://github.com/lspitzner/exference-exference): both library with advanced interface and executable
-
-Note that I have not published the irc bot package (yet).
+- The package does not contain the environment via data-files, so the sdist
+  package might be incomplete.
 
 ## Compiling from source
 
