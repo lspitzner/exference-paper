@@ -85,12 +85,20 @@ cabal run -- "(Show b) => (a->b) -> [a] -> [String]"
 
 Note that i use a git subtree for integration of exference-core into exference.
 (Maybe a submodule would be better, or just using a single repository -
-i have no definite opinion yet). 
+i have no definite opinion yet). Changes made to the exference-core subtree
+should be separated from other changes. In contrast to submodules it is not
+necessary to `update` or `init`.
 
-I am aware that few people know subtrees, and it does not really matter if
-you do not, so do not be discouraged. Basically it means that changes
-made to the exference-core subtree should be separated from other changes.
-In contrast to submodules it is not necessary to `update` or `init`.
+If you want to add new elements to the environment, be careful not to add
+functions that
+- are just synonyms of other functions (including cases such as `mapM` vs `forM`);
+- lose information, e.g. `void :: Functor f => f a -> f ()`;
+
+and avoid adding functions that
+- are polymorphic in their return type (as they increase the search space
+  for any query) - if really necessary, they can be added including an
+  appropriate rating entry;
+- are just more specific versions of existing functions.
 
 ## Trivia
 
@@ -102,10 +110,3 @@ In contrast to submodules it is not necessary to `update` or `init`.
 ## IRC
 
 `#exference`
-
-## FAQ
-
-- Why no hackage distribution?
-
-    Best excuse is that i keep making minor modifications, and want to wait
-    for a "proper" semi-finished version for a hackage publication.
