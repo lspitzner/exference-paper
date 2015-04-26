@@ -19,7 +19,7 @@ sometimes stopping with "i could not find any solutions".
 - Source repositories
     - [exference-exference\-core](https://github.com/lspitzner/exference-exference-core): core functionality library
     - [exference-exference](https://github.com/lspitzner/exference-exference): both library with advanced interface and executable
-- exferenceBot on freenode #exference
+- exferenceBot on freenode IRC #exference
     - play around without installing exference locally
     - reacts to `:exf` prefix, i.e. `:exf "Monad m => m (m a) -> m a"`
     - `/msg exferenceBot help`
@@ -55,7 +55,7 @@ any / the right solution. Some common current limitations are:
 
 ## Other known (technical) issues
 
-- *Memory consumption is large* (even more so when profiling);
+- **Memory consumption is large** (even more so when profiling);
 - The executable is badly named (`test-main`);
   the tests should be put in a proper test-suite.
   (initially the executable was created for testing purposes
@@ -96,6 +96,8 @@ In contrast to submodules it is not necessary to `update` or `init`.
 
 * The author did not learn about the term "entailment" until after implementing
   the respective part of the algorithm.
+* *Exference* was used at least once to implement some typed hole in its own
+  source code.
 
 ## IRC
 
