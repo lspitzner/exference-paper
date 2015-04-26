@@ -83,11 +83,15 @@ cabal run -- "(Show b) => (a->b) -> [a] -> [String]"
 
 ## Contributing
 
+### source
+
 Note that i use a git subtree for integration of exference-core into exference.
 (Maybe a submodule would be better, or just using a single repository -
 i have no definite opinion yet). Changes made to the exference-core subtree
 should be separated from other changes. In contrast to submodules it is not
 necessary to `update` or `init`.
+
+### environment
 
 If you want to add new elements to the environment, be careful not to add
 functions that
